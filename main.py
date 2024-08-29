@@ -40,18 +40,18 @@ ensure_states(states)
 # 3: Define Streamlit page structure and functionality
 st.write(
     """
-# Infinite Bookshelf: Write full books using llama3 (8b and 70b) on Groq
+# Ghostwriter: Basic 
 """
 )
 
-col1, col2 = st.columns([0.7,0.3])
+col1, col2 = st.columns([0.9,0.1])
 with col1:
     st.info(
-        "You are using a streamlined version. Try the new [advanced version](/advanced) in beta."
+        "This is a streamlined book generation using Llama 3 8B & 70B model and Groq."
     )
 
-with col2:
-    st.image("assets/logo/powered-by-groq.svg", width=150)
+#with col2:
+#    st.image("assets/logo/powered-by-groq.svg", width=150)
 
 
 def disable():
