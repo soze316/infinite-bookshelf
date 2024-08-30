@@ -9,9 +9,9 @@ def render_advanced_groq_form(on_submit, button_disabled=False, button_text="Gen
     # Sidebar content
     with st.sidebar:
         st.warning(
-            "🚧 Advanced Mode is in beta: You're using a version with experimental features."
+            "🚧 Advanced Mode is in alpha: You're using a version with experimental features."
         )
-        st.markdown("### For creating book title:")
+        st.markdown("### For creating the book title:")
         title_agent_model = st.selectbox(
             "Title Agent Model",
             MODEL_LIST,
@@ -19,7 +19,7 @@ def render_advanced_groq_form(on_submit, button_disabled=False, button_text="Gen
             help="Creates titles for chapters and sections",
         )
 
-        st.markdown("### For creating book structure:")
+        st.markdown("### For creating the book structure:")
         structure_agent_model = st.selectbox(
             "Structure Agent Model",
             MODEL_LIST,
@@ -27,7 +27,7 @@ def render_advanced_groq_form(on_submit, button_disabled=False, button_text="Gen
             help="Creates the overall structure of the book",
         )
 
-        st.markdown("### For creating book content:")
+        st.markdown("### For creating the book content:")
         section_agent_model = st.selectbox(
             "Section Agent Model",
             MODEL_LIST,
@@ -35,11 +35,11 @@ def render_advanced_groq_form(on_submit, button_disabled=False, button_text="Gen
             help="Generates content for each section of the book",
         )
         st.markdown("\n")
-        st.image("assets/logo/powered-by-groq.svg", width=150)
+        #st.image("assets/logo/powered-by-groq.svg", width=150)
 
     with st.form("groqform"):
         st.info(
-            "You are using advanced mode with additional features. Visit [here](/) to use the streamlined version."
+            "This is a streamlined author services option using Llama 3 8B & 70B with options to upload content to help with the book's construction. The version with independent agents is coming."
         )
 
         if not st.session_state.get("api_key"):

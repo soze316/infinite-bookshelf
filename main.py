@@ -47,7 +47,7 @@ st.write(
 col1, col2 = st.columns([0.9,0.1])
 with col1:
     st.info(
-        "This is a streamlined book generation using Llama 3 8B & 70B model and Groq."
+        "This is a streamlined author services option using Llama 3 8B & 70B model and Groq."
     )
 
 #with col2:
