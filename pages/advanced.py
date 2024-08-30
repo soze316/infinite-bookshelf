@@ -41,7 +41,7 @@ ensure_states(states)
 # 3: Define Streamlit page structure and functionality
 st.write(
     """
-# Ghostwriter: Advanced 
+# Ghostwriter: Advanced version 
 """
 )
 
