@@ -67,7 +67,8 @@ def generate_section(
                 </reference_text>
 
                 Generate a long, comprehensive, structured chapter for the section provided. If additional instructions are provided, 
-                consider them very important within the context of finance and the economy. Only output the content. 
+                consider them very important within the context of finance and the economy because you only write non-fiction. 
+                Only output the content. 
                 """
                 #"content": "You are an expert writer. Generate a long, comprehensive, structured chapter for the section provided. If additional instructions are provided, consider them very important. Only output the content.",
             },
