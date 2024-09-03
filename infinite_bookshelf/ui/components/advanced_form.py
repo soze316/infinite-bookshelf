@@ -4,6 +4,7 @@ MODEL_LIST = ["llama3-70b-8192", "llama3-8b-8192", "gemma2-9b-it"]
 
 
 def render_advanced_groq_form(on_submit, button_disabled=False, button_text="Generate"):
+    
     st.sidebar.title("Select AI Models")
 
     # Sidebar content
@@ -35,7 +36,7 @@ def render_advanced_groq_form(on_submit, button_disabled=False, button_text="Gen
             help="Generates content for each section of the book",
         )
         st.markdown("\n")
-        #st.image("assets/logo/powered-by-groq.svg", width=150)
+        st.image("assets/logo/powered-by.png", width=50)
 
     with st.form("groqform"):
         st.info(

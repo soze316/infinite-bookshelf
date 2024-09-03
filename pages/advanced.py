@@ -41,7 +41,7 @@ ensure_states(states)
 # 3: Define Streamlit page structure and functionality
 st.write(
     """
-# Ghostwriter: Advanced version 
+# Ghostwriter 
 """
 )
 
@@ -76,13 +76,19 @@ try:
         structure_agent_model,
         section_agent_model,
     ) = render_advanced_groq_form(
-        on_submit=disable,
+        on_submit=enable,
         button_disabled=st.session_state.button_disabled,
         button_text=st.session_state.button_text,
     )
 
     # New content for advanced mode
-    additional_section_writer_prompt = "The book chapters should be comprehensive. The writing should be: \nEngaging and tailored to the specified writing style, tone, and complexity level. \nWell-structured with clear subheadings, paragraphs, and transitions. \nRich in relevant examples, analogies, and explanations. \nConsistent with provided seed content and additional instructions. \nFocused on delivering value through insightful analysis and information. \nFactually accurate based on the latest available information. \nCreative, offering unique perspectives or thought-provoking ideas. \nEnsure each section flows logically, maintaining coherence throughout the chapter."
+    additional_section_writer_prompt = f"""The book chapters should be comprehensive. The writing should be: \nEngaging and tailored to the 
+    specified writing style, tone, and complexity level. \nWell-structured with clear subheadings, paragraphs, and transitions. 
+    \nRich in relevant examples, analogies, and explanations. \nConsistent with provided seed content and additional instructions. 
+    \nFocused on delivering value through insightful analysis and information. \nFactually accurate based on the latest available information. 
+    \nCreative, offering unique perspectives or thought-provoking ideas. \nEnsure each section flows logically, maintaining coherence 
+    throughout the chapter. There should be little to no reptitions of sentences, especially at the start of a chapter."""
+
     advanced_settings_prompt = f"Use the following parameters:\nWriting Style: {writing_style}\nComplexity Level: {complexity_level}"
     total_seed_content = ""
 
@@ -92,13 +98,14 @@ try:
     if uploaded_file:
         total_seed_content += uploaded_file.read().decode("utf-8")
     if total_seed_content != "":
-        total_seed_content = f"The user has provided seed content for context. Develop the structure and content around the provided seed: <seed>{total_seed_content}</seed>"
+        total_seed_content = f"""The user has provided seed content for context. Develop the structure and content around the provided 
+        seed: <seed>{total_seed_content}</seed>"""
 
     if submitted:
         if len(topic_text) < 10:
             raise ValueError("Book topic must be at least 10 characters long")
 
-        st.session_state.button_disabled = True
+        #st.session_state.button_disabled = True
         st.session_state.statistics_text = (
             "Generating book title and structure in background...."
         )
