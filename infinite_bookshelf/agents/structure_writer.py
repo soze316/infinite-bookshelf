@@ -10,7 +10,7 @@ def generate_book_structure(
     additional_instructions: str,
     model: str,
     groq_provider,
-    long: bool = False,
+    long: bool = True,
 ):
     """
     Returns book structure content as well as total tokens and total time for generation.
@@ -78,7 +78,7 @@ def generate_book_structure(
         #  for a long (>300 page) book. It is very important that use the following subject and additional instructions to 
         #  write the book. \n\n<subject>{prompt}</subject>\n\n<additional_instructions>{additional_instructions}</additional_instructions>"""
     else:
-        USER_PROMPT = f"""You are tasked with writing a 300-word short story. Your goal is to create an engaging and well-structured 
+        USER_PROMPT = f"""You are tasked with writing a 200-word short story. Your goal is to create an engaging and well-structured 
         narrative that adheres to specific guidelines. Follow these instructions carefully to craft your story:
        <subject>{prompt}</subject>
        <aditional instructions>{additional_instructions}</additional_instructions>   
