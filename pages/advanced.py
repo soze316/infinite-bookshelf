@@ -130,7 +130,7 @@ try:
             additional_instructions=additional_instructions_prompt,
             model=structure_agent_model,
             groq_provider=st.session_state.groq,
-            long=True # Use longer version in advanced
+            long=False # Use longer version in advanced
         )
 
         # Step 2: Generate book title using title_writer agent
