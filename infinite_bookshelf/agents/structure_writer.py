@@ -10,7 +10,7 @@ def generate_book_structure(
     additional_instructions: str,
     model: str,
     groq_provider,
-    long: bool = False,
+    long: bool = True,
 ):
     """
     Returns book structure content as well as total tokens and total time for generation.

@@ -6,7 +6,7 @@ from ..inference import GenerationStatistics
 
 
 def generate_section(
-    prompt: str, additional_instructions: str, model: str, groq_provider, long: bool = False
+    prompt: str, additional_instructions: str, model: str, groq_provider, long: bool = True
 ):
 
     PROMPT_USER = ""
